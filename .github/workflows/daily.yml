@@ -1,0 +1,11 @@
+name: 每日真实新闻日报
+on:
+  schedule:
+    - cron: "0 1 * * *"  # 每天北京时间 9:00 发送
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 发送新闻日报
+        run: python main.py
